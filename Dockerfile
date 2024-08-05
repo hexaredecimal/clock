@@ -11,8 +11,8 @@ RUN apt-get update && \
 
 # Clone the repository and set the working directory
 RUN cd ~ && \
-    git clone https://github.com/hexaredecimal/clock.git && \
-    cd clock
+    git clone https://github.com/hexaredecimal/clock.git ~/clock && \
+    cd ~/clock
 
 # Ensure the jar file is present and has the right permissions
 
