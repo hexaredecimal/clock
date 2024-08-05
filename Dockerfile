@@ -1,14 +1,8 @@
-# Use the latest version of Ubuntu as the base image
-FROM ubuntu:latest
+# Use an official Arch Linux base image
+FROM archlinux:latest
 
-# Set environment variables to ensure non-interactive installation
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Install necessary packages: git and JDK 17
-RUN apt-get update && \
-    apt-get install -y git openjdk-17-jdk && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN pacman -Syu --noconfirm \
+    && pacman -S --noconfirm jre-openjdk git vim
 
 # Clone the repository and set the working directory
 RUN cd / && \
