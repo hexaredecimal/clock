@@ -14,6 +14,9 @@ RUN cd ~ && \
     git clone https://github.com/hexaredecimal/clock.git && \
     cd clock
 
+# Ensure the jar file is present and has the right permissions
+RUN chmod +x clockserver-dist.jar
+
 # Set the working directory
 WORKDIR ~/clock
 
