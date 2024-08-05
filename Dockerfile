@@ -6,11 +6,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install necessary packages: git and JDK 17
 RUN apt-get update && \
-    apt-get install -y git openjdk-21-jdk vim && \
-    apt-get clean \
+    apt-get install -y git openjdk-17-jdk && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Clone the repository and set the working directory
-RUN cd && \
+RUN cd / && \
     git clone https://github.com/hexaredecimal/clock.git && \
     cd clock
 
@@ -21,6 +22,6 @@ WORKDIR /clock
 EXPOSE 8080
 
 # Run the Java application
-CMD ["java", "-jar", "clockserver-dist.jar"]
+CMD ["java", "-jar", "clockserver-dist.jar", "."]
 
 
