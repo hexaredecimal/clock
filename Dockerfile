@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install necessary packages: git and JDK 17
 RUN apt-get update && \
     apt-get install -y git openjdk-21-jdk vim && \
-    apt-get clean && \
+    apt-get clean \
 
 # Clone the repository and set the working directory
 RUN cd && \
