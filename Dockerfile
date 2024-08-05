@@ -21,6 +21,6 @@ WORKDIR ~/clock
 EXPOSE 8080
 
 # Run the Java application
-CMD ["java", "-jar", "clockserver-dist.java"]
+CMD ["java", "-jar", "clockserver-dist.jar"]
 
 
